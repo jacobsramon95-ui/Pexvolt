@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
-import logo from '../assets/logo-new.png';
+import industrialImg from '../assets/industrial-project-new.jpg';
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -21,7 +21,7 @@ export const Hero = () => {
       <div className="absolute top-0 right-0 w-[45%] h-full bg-gradient-to-br from-transparent via-transparent to-brand-red/5 pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-brand-red to-transparent"></div>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 items-center w-full">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -58,9 +58,16 @@ export const Hero = () => {
             </a>
           </div>
 
-          <div className="flex flex-wrap border-t border-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 border-t border-white/10">
             {stats.map((stat, i) => (
-              <div key={i} className="pt-5 pr-9 mr-9 border-r border-white/10 last:border-r-0 last:mr-0 last:pr-0">
+              <div 
+                key={i} 
+                className={`py-6 pr-6 md:pr-10 md:py-8 border-white/10 
+                  ${i % 2 === 0 ? 'border-r' : ''} 
+                  ${i < 2 ? 'border-b md:border-b-0' : ''}
+                  md:border-r md:last:border-r-0
+                `}
+              >
                 <div className="font-display text-4xl font-black text-brand-red leading-none">{stat.n}</div>
                 <div className="text-[10px] text-brand-gray tracking-widest uppercase mt-1">{t(stat.en, stat.sw)}</div>
               </div>
@@ -69,18 +76,16 @@ export const Hero = () => {
         </motion.div>
 
         <motion.div 
-          className="hidden lg:block relative shrink-0"
+          className="relative w-full h-[300px] md:h-[450px] lg:h-[600px] rounded-3xl overflow-hidden border-2 border-brand-red/20 shadow-[0_0_100px_rgba(204,26,26,0.15)]"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <div className="relative p-4 bg-[#050b14] border-2 border-brand-red/20 rounded-3xl shadow-[0_0_100px_rgba(204,26,26,0.15)]">
-            <img 
-              src={logo} 
-              alt="Pexvolt Logo" 
-              className="w-[240px] h-[240px] md:w-[360px] md:h-[360px] lg:w-[520px] lg:h-[520px] object-contain bg-white rounded-xl"
-            />
-          </div>
+          <img 
+            src={industrialImg} 
+            alt="Industrial Project" 
+            className="w-full h-full object-cover"
+          />
           <div className="absolute -inset-6 border border-brand-red/10 rounded-[40px] -z-10 animate-pulse"></div>
         </motion.div>
       </div>
