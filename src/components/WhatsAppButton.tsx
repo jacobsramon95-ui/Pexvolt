@@ -11,32 +11,32 @@ export const WhatsAppButton = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-[9999] flex items-center justify-center bg-[#25D366] text-white rounded-full shadow-2xl hover:shadow-green-500/20 transition-all group"
+      className="fixed right-4 top-1/2 -translate-y-1/2 lg:right-10 lg:bottom-10 lg:top-auto lg:translate-y-0 z-[99999] flex items-center justify-center bg-[#25D366] text-white rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.5)] hover:shadow-green-500/60 transition-all group cursor-pointer"
       aria-label="Contact Pexvolt Engineering on WhatsApp"
       title="Chat on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ 
-        scale: [1, 1.05, 1],
-        opacity: 1
+        scale: 1,
+        opacity: 1,
+        y: [0, -10, 0] // Continuous floating up and down
       }}
       transition={{
-        scale: {
-          duration: 2,
+        y: {
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut"
         },
-        opacity: {
-          duration: 0.5
-        }
+        opacity: { duration: 0.5 },
+        scale: { duration: 0.5 }
       }}
-      whileHover={{ scale: 1.15 }}
+      whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
       {/* Pulse Effect Background */}
-      <div className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20 group-hover:opacity-40"></div>
+      <div className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-40 group-hover:opacity-60"></div>
       
       {/* WhatsApp Icon */}
-      <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center p-3 md:p-4">
+      <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center p-3.5 md:p-4">
         <svg 
           viewBox="0 0 24 24" 
           fill="currentColor" 

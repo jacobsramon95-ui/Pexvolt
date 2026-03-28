@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Youtube, Instagram, Mail, Image } from 'lucide-react';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo-new.png';
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -9,11 +9,11 @@ export const Footer = () => {
   return (
     <footer className="bg-[#020810] border-t-2 border-brand-red py-10 px-[6%]">
       <div className="flex flex-wrap items-center justify-between gap-5">
-        <div className="flex items-center gap-3.5">
+        <div className="hidden lg:flex items-center gap-3.5">
           <img 
             src={logo} 
             alt="Pexvolt Logo" 
-            className="w-[48px] h-[48px] object-contain mix-blend-multiply"
+            className="w-auto h-[64px] object-contain"
           />
           <div>
             <div className="font-display font-black text-lg tracking-widest uppercase text-brand-red">

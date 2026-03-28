@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo-new.png';
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -69,17 +69,19 @@ export const Hero = () => {
         </motion.div>
 
         <motion.div 
-          className="relative shrink-0 flex justify-center lg:block"
+          className="hidden lg:block relative shrink-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <img 
-            src={logo} 
-            alt="Pexvolt Logo" 
-            className="w-[180px] h-[180px] md:w-[240px] md:h-[240px] lg:w-[280px] lg:h-[280px] object-contain shadow-[0_0_80px_rgba(204,26,26,0.3)] animate-logo-float mix-blend-multiply"
-          />
-          <div className="absolute -inset-4 border-2 border-brand-red/30 rounded-2xl -z-10 animate-pulse"></div>
+          <div className="relative p-4 bg-[#050b14] border-2 border-brand-red/20 rounded-3xl shadow-[0_0_100px_rgba(204,26,26,0.15)]">
+            <img 
+              src={logo} 
+              alt="Pexvolt Logo" 
+              className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[420px] lg:h-[420px] object-contain bg-white rounded-xl"
+            />
+          </div>
+          <div className="absolute -inset-6 border border-brand-red/10 rounded-[40px] -z-10 animate-pulse"></div>
         </motion.div>
       </div>
     </section>

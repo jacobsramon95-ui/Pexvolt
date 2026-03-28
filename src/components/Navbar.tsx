@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo2.png';
+import logo from '../assets/logo-new.png';
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
@@ -32,7 +32,7 @@ export const Navbar = () => {
           <img 
             src={logo} 
             alt="Pexvolt Logo" 
-            className="w-[52px] h-[52px] object-contain mix-blend-multiply"
+            className="w-auto h-[60px] object-contain"
           />
           <div className="flex flex-col leading-[1.1]">
             <span className="font-display font-black text-[21px] tracking-[3px] text-brand-red uppercase">
