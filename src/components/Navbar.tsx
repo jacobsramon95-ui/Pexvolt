@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Menu, X } from 'lucide-react';
+import logoImg from '../../public/images/logo.jpg';
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
