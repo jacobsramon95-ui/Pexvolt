@@ -24,7 +24,7 @@ export const Footer = () => {
         </div>
         
         <div className="text-[13px] text-brand-gray">
-          {'© 2024 Pexvolt Engineering. All rights reserved.'}
+          {t('© 2024 Pexvolt Engineering. All rights reserved.', '© 2024 Pexvolt Engineering. Haki zote zimehifadhiwa.')}
         </div>
 
         <div className="flex gap-2.5">

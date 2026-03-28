@@ -1,4 +1,4 @@
-import React from 'react'; // v2
+import React from 'react';
 import { motion } from 'motion/react';
 
 export const WhatsAppButton = () => {
@@ -11,7 +11,7 @@ export const WhatsAppButton = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed right-4 top-1/2 -translate-y-1/2 lg:right-10 lg:bottom-10 lg:top-auto lg:translate-y-0 z-[99999] flex items-center justify-center bg-[#25D366] text-white rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.5)] hover:shadow-green-500/60 transition-all group cursor-pointer"
+      className="fixed right-4 md:right-10 top-1/2 -translate-y-1/2 z-[99999] flex items-center justify-center bg-[#25D366] text-white rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.5)] hover:shadow-green-500/60 transition-all group cursor-pointer"
       aria-label="Contact Pexvolt Engineering on WhatsApp"
       title="Chat on WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
