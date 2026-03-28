@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { ExternalLink, Camera } from 'lucide-react';
-import industrialProject from '../assets/industrial-project.jpg';
+import industrialProject from '../assets/industrial-project-new.jpg';
 
 export const Gallery = () => {
   const { t } = useLanguage();
