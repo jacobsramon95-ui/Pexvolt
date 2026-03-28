@@ -81,7 +81,7 @@ export const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <img 
-            src="/images/industrial.jpg" 
+            src="/images/industrialproject.jpg" 
             alt="Industrial Project" 
             className="w-full h-full object-cover"
           />

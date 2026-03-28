@@ -9,7 +9,7 @@ export const Gallery = () => {
   const projects = [
     {
       id: 1,
-      image: '/images/industrial.jpg',
+      image: '/images/industrialproject.jpg',
       enTitle: 'Industrial Installation',
       swTitle: 'Usakinishaji wa Viwandani',
       enCategory: 'Electrical',
