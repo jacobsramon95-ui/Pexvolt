@@ -78,7 +78,7 @@ export const Hero = () => {
             <img 
               src={logo} 
               alt="Pexvolt Logo" 
-              className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[420px] lg:h-[420px] object-contain bg-white rounded-xl"
+              className="w-[240px] h-[240px] md:w-[360px] md:h-[360px] lg:w-[520px] lg:h-[520px] object-contain bg-white rounded-xl"
             />
           </div>
           <div className="absolute -inset-6 border border-brand-red/10 rounded-[40px] -z-10 animate-pulse"></div>
