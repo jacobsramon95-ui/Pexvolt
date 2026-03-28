@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // v2
 import { useLanguage } from '../lib/LanguageContext';
 import { Youtube, Instagram, Mail, Image } from 'lucide-react';
 import logo from '../assets/logo-new.png';
