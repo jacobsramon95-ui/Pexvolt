@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
-import industrialImg from '../assets/industrial-project-new.jpg';
 
 export const Hero = () => {
   const { t } = useLanguage();
@@ -76,13 +75,13 @@ export const Hero = () => {
         </motion.div>
 
         <motion.div 
-          className="relative w-full h-[300px] md:h-[450px] lg:h-[600px] rounded-3xl overflow-hidden border-2 border-brand-red/20 shadow-[0_0_100px_rgba(204,26,26,0.15)]"
+          className="hidden md:block relative w-full h-[300px] md:h-[450px] lg:h-[600px] rounded-3xl overflow-hidden border-2 border-brand-red/20 shadow-[0_0_100px_rgba(204,26,26,0.15)]"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
           <img 
-            src={industrialImg} 
+            src="/images/industrial.jpg" 
             alt="Industrial Project" 
             className="w-full h-full object-cover"
           />

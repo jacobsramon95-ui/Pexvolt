@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo-new.png';
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
@@ -30,7 +29,7 @@ export const Navbar = () => {
       <div className="flex items-center justify-between h-[72px] gap-6">
         <a href="#home" className="flex items-center gap-3 no-underline shrink-0">
           <img 
-            src={logo} 
+            src="/images/logo.png" 
             alt="Pexvolt Logo" 
             className="w-auto h-[60px] object-contain"
           />

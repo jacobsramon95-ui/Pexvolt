@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { ExternalLink, Camera } from 'lucide-react';
-import industrialProject from '../assets/industrial-project-new.jpg';
 
 export const Gallery = () => {
   const { t } = useLanguage();
@@ -10,7 +9,7 @@ export const Gallery = () => {
   const projects = [
     {
       id: 1,
-      image: industrialProject,
+      image: '/images/industrial.jpg',
       enTitle: 'Industrial Installation',
       swTitle: 'Usakinishaji wa Viwandani',
       enCategory: 'Electrical',
