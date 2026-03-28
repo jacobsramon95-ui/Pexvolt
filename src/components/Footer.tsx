@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="flex flex-wrap items-center justify-between gap-5">
         <div className="hidden lg:flex items-center gap-3.5">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.jpg" 
             alt="Pexvolt Logo" 
             className="w-auto h-[64px] object-contain"
           />

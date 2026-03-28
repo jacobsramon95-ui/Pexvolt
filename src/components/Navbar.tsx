@@ -29,7 +29,7 @@ export const Navbar = () => {
       <div className="flex items-center justify-between h-[72px] gap-6">
         <a href="#home" className="flex items-center gap-3 no-underline shrink-0">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.jpg" 
             alt="Pexvolt Logo" 
             className="w-auto h-[60px] object-contain"
           />
