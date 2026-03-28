@@ -13,7 +13,7 @@ export const Footer = () => {
           <img 
             src={logo} 
             alt="Pexvolt Logo" 
-            className="w-[48px] h-[48px] object-contain"
+            className="w-[48px] h-[48px] object-contain mix-blend-multiply"
           />
           <div>
             <div className="font-display font-black text-lg tracking-widest uppercase text-brand-red">

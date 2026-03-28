@@ -69,7 +69,7 @@ export const Hero = () => {
         </motion.div>
 
         <motion.div 
-          className="hidden lg:block relative shrink-0"
+          className="relative shrink-0 flex justify-center lg:block"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -77,7 +77,7 @@ export const Hero = () => {
           <img 
             src={logo} 
             alt="Pexvolt Logo" 
-            className="w-[280px] h-[280px] object-contain shadow-[0_0_80px_rgba(204,26,26,0.3)] animate-logo-float"
+            className="w-[180px] h-[180px] md:w-[240px] md:h-[240px] lg:w-[280px] lg:h-[280px] object-contain shadow-[0_0_80px_rgba(204,26,26,0.3)] animate-logo-float mix-blend-multiply"
           />
           <div className="absolute -inset-4 border-2 border-brand-red/30 rounded-2xl -z-10 animate-pulse"></div>
         </motion.div>

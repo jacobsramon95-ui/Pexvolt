@@ -32,7 +32,7 @@ export const Navbar = () => {
           <img 
             src={logo} 
             alt="Pexvolt Logo" 
-            className="w-[52px] h-[52px] object-contain"
+            className="w-[52px] h-[52px] object-contain mix-blend-multiply"
           />
           <div className="flex flex-col leading-[1.1]">
             <span className="font-display font-black text-[21px] tracking-[3px] text-brand-red uppercase">
