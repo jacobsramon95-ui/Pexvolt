@@ -16,8 +16,10 @@ export const Footer = () => {
             className="w-auto h-[64px] object-contain"
           />
           <div>
-            <div className="font-display font-black text-lg tracking-widest uppercase text-brand-red">
-              Pexvolt Engineering
+            <div className="font-display font-black text-lg tracking-widest uppercase">
+              <span className="text-brand-red">Pex</span>
+              <span className="text-brand-red">volt</span>
+              <span className="text-brand-red"> Engineering</span>
             </div>
             <div className="text-[11px] text-brand-gray tracking-wider">Thika, Kiambu County, Kenya</div>
           </div>

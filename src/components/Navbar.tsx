@@ -35,8 +35,9 @@ export const Navbar = () => {
             className="w-auto h-[60px] object-contain"
           />
           <div className="flex flex-col leading-[1.1]">
-            <span className="font-display font-black text-[21px] tracking-[3px] text-brand-red uppercase">
-              Pexvolt
+            <span className="font-display font-black text-[21px] tracking-[3px] uppercase">
+              <span className="text-brand-red">Pex</span>
+              <span className="text-brand-red">volt</span>
             </span>
             <span className="text-[9px] tracking-[3px] text-brand-gray uppercase font-semibold">Engineering</span>
           </div>
