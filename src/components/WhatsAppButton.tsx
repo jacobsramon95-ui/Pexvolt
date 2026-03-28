@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 
 export const WhatsAppButton = () => {
-  const phoneNumber = '254713358061';
+  const phoneNumber = '254743244027';
   const message = encodeURIComponent('Hello Pexvolt Engineering, I would like to request a quote. / Habari Pexvolt Engineering, ningependa kupata bei.');
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

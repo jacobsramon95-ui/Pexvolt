@@ -16,15 +16,15 @@ export const Footer = () => {
             className="w-[48px] h-[48px] object-contain"
           />
           <div>
-            <div className="font-display font-black text-lg tracking-widest uppercase">
-              Pex<span className="text-brand-red">volt</span> Engineering
+            <div className="font-display font-black text-lg tracking-widest uppercase text-brand-red">
+              Pexvolt Engineering
             </div>
             <div className="text-[11px] text-brand-gray tracking-wider">Thika, Kiambu County, Kenya</div>
           </div>
         </div>
         
         <div className="text-[13px] text-brand-gray">
-          {t('© 2025 Pexvolt Engineering. All rights reserved.', '© 2025 Pexvolt Engineering. Haki zote zimehifadhiwa.')}
+          {t('© 2024 Pexvolt Engineering. All rights reserved.', '© 2024 Pexvolt Engineering. Haki zote zimehifadhiwa.')}
         </div>
 
         <div className="flex gap-2.5">
