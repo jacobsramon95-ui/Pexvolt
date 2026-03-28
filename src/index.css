@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
+
+  --color-navy: #060d1a;
+  --color-navy-light: #0a1628;
+  --color-navy-lighter: #0e1f3d;
+  --color-brand-red: #cc1a1a;
+  --color-brand-red-hover: #e82020;
+  --color-brand-gray: #6b7fa0;
+  --color-brand-light: #b8c8e0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-navy text-white overflow-x-hidden font-sans;
+  }
+}
+
+@keyframes bdot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(204, 26, 26, 0.5); }
+  50% { opacity: 0.4; box-shadow: 0 0 0 6px rgba(204, 26, 26, 0); }
+}
+
+.animate-blink-dot {
+  animation: bdot 2s infinite;
+}
+
+@keyframes logofloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-logo-float {
+  animation: logofloat 4s ease-in-out infinite;
+}
+
+.circuit-bg {
+  background-image: linear-gradient(rgba(204, 26, 26, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(204, 26, 26, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
