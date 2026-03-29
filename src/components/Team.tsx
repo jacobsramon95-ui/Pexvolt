@@ -75,6 +75,15 @@ export const Team = ({ isPage = false }: { isPage?: boolean }) => {
         ))}
       </div>
 
+      <div className="mt-16 text-center max-w-3xl mx-auto">
+        <p className="text-brand-gray leading-relaxed italic">
+          {t(
+            'At Pexvolt Engineering, every project is treated with the same level of care — from a small domestic repair to a large industrial installation. We are proud to be based in Thika and committed to raising the standard of electrical engineering in Kenya. Contact us today for a free quote and discover why clients across Thika and Nairobi trust Pexvolt Engineering.',
+            'Katika Pexvolt Engineering, kila mradi unashughulikiwa kwa kiwango kile kile cha utunzaji — kuanzia ukarabati mdogo wa nyumbani hadi usakinishaji mkubwa wa viwandani. Tunajivunia kuwa na makao yetu Thika na tumejitolea kuinua kiwango cha uhandisi wa umeme nchini Kenya. Wasiliana nasi leo kwa nukuu ya bure na ugundue kwa nini wateja kote Thika na Nairobi wanaamini Pexvolt Engineering.'
+          )}
+        </p>
+      </div>
+
       {isPage && (
         <div className="mt-24 max-w-4xl mx-auto">
           <div className="prose prose-invert prose-brand max-w-none">
