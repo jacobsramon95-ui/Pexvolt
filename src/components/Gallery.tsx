@@ -96,6 +96,32 @@ export const Gallery = ({ isPage = false }: { isPage?: boolean }) => {
           </motion.div>
         ))}
       </div>
+
+      {isPage && (
+        <div className="mt-24 max-w-4xl mx-auto">
+          <div className="prose prose-invert prose-brand max-w-none">
+            <p className="text-lg text-brand-light leading-relaxed mb-8">
+              Our portfolio is a testament to the diverse range of projects we have successfully executed across the region, showcasing our versatility as a top-tier <strong>electrician Thika</strong>. From large-scale industrial complexes to intimate residential spaces, every project in our gallery represents a unique challenge that we met with technical precision and creative problem-solving. We believe that our work speaks for itself, demonstrating our commitment to being the leading provider of <strong>electrical installation Kenya</strong>. Each image captures a moment of engineering excellence, where safety, functionality, and aesthetics converge to create a superior electrical environment for our clients.
+            </p>
+            
+            <p className="text-brand-gray leading-relaxed mb-8">
+              One of the highlights of our portfolio is our extensive work in the industrial sector. These projects often involve complex power distribution systems, heavy-duty machinery wiring, and sophisticated control panels. In the competitive field of <strong>electrical installation Kenya</strong>, our ability to handle such large-scale operations with zero compromise on safety has made us a preferred partner for many industrial facilities. We ensure that every industrial installation is built to withstand the rigors of daily operation while maintaining peak efficiency, helping our clients minimize downtime and maximize productivity through professional engineering.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Our commitment to a greener future is also prominently featured in our portfolio through various <strong>solar power Thika</strong> projects. We have helped numerous homeowners and businesses transition to renewable energy, installing systems that range from simple backup solutions to full off-grid arrays. Each <strong>solar power Thika</strong> installation is custom-designed to meet the specific energy needs and site conditions of our clients. By showcasing these projects, we hope to inspire more people in the community to embrace sustainable energy solutions that are both environmentally friendly and economically sound in the long run.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Security and automation are also key areas where we excel, as seen in our <strong>automated gate Thika</strong> and CCTV projects. An <strong>automated gate Thika</strong> is more than just a luxury; it is a vital component of a modern security strategy. Our portfolio includes a variety of gate systems, from sliding to swing gates, all integrated with advanced access control for maximum security and convenience. Similarly, our <strong>CCTV installation Thika</strong> projects demonstrate our ability to provide comprehensive surveillance solutions that protect properties from every angle. These projects highlight our holistic approach to security, combining physical barriers with electronic monitoring for total peace of mind.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Finally, our portfolio reflects our readiness to handle any electrical challenge, including those that require immediate attention. As a trusted <strong>24/7 emergency electrician Kenya</strong>, we have been called upon to resolve critical power issues at all hours of the day and night. While these emergency repairs may not always be the most visually striking projects in our gallery, they are among the most important work we do. They demonstrate our reliability, our technical skill under pressure, and our unwavering dedication to serving the Thika community whenever an electrical crisis occurs. Whether it is a planned project or an urgent repair, Pexvolt Engineering is always ready to deliver excellence.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

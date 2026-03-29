@@ -149,6 +149,32 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
           )}
         </form>
       </div>
+
+      {isPage && (
+        <div className="mt-24 max-w-4xl mx-auto">
+          <div className="prose prose-invert prose-brand max-w-none">
+            <p className="text-lg text-brand-light leading-relaxed mb-8">
+              At Pexvolt Engineering, we believe that clear and open communication is the first step toward a successful partnership. Whether you have a specific project in mind or just have a general question about our services, we are always here to help. As a leading <strong>electrician Thika</strong>, we make it our priority to respond to all inquiries promptly and professionally. We understand that your time is valuable, and we strive to provide the information and support you need to make informed decisions about your property's electrical and security systems. When you reach out to us, you are not just contacting a service provider; you are connecting with a team of experts dedicated to being the best in <strong>electrical installation Kenya</strong>.
+            </p>
+            
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Our contact options are designed to be as convenient as possible for our clients. You can reach our directors, Daniel Joshua and David Abuga, directly via phone for immediate assistance or to discuss the technical details of a potential project. For less urgent matters, feel free to send us an email or use the contact form on this page. We monitor our inbox closely and aim to provide detailed responses to all messages within a few hours. Whether you are inquiring about a new <strong>electrical installation Kenya</strong> or need a quote for a specialized <strong>solar power Thika</strong> system, our team is ready to provide the professional guidance you expect from a top-tier engineering firm.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              We also understand that electrical emergencies don't always happen during regular business hours. That is why we are proud to offer a <strong>24/7 emergency electrician Kenya</strong> service. If you are facing a critical power issue, a malfunctioning security system, or any other urgent electrical problem, do not hesitate to call us at any time of the day or night. Our emergency response team is always on standby, equipped with the tools and expertise needed to resolve crises quickly and safely. We are committed to being there for the Thika community whenever they need us most, ensuring that your home or business remains powered and protected around the clock.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              For those interested in enhancing their property's security and sustainability, we offer specialized consultations for <strong>CCTV installation Thika</strong> and <strong>solar power Thika</strong> projects. We can help you design a surveillance system that provides total coverage or a solar array that maximizes your energy independence. Our experts will walk you through the various options available, explaining the benefits and costs of each to help you find the perfect fit for your needs. Whether you are looking for an <strong>automated gate Thika</strong> to secure your driveway or a complex networking setup for your office, Pexvolt Engineering has the local knowledge and technical skill to deliver outstanding results.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Finally, we invite you to visit us or schedule a site visit so we can assess your needs in person. Being locally based in Thika allows us to serve our clients with a level of speed and care that larger, more distant firms simply cannot match. We know the area, we know the people, and we are deeply invested in the success of every project we undertake. From a simple <strong>automated gate Thika</strong> repair to a large-scale industrial <strong>CCTV installation Thika</strong>, you can count on Pexvolt Engineering for professional, reliable, and expert service. Contact us today and let us show you why we are the preferred <strong>electrician Thika</strong> for so many homeowners and businesses across the region.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

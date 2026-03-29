@@ -119,6 +119,32 @@ export const Services = ({ isPage = false }: { isPage?: boolean }) => {
           </div>
         </div>
       </div>
+
+      {isPage && (
+        <div className="mt-24 max-w-4xl mx-auto">
+          <div className="prose prose-invert prose-brand max-w-none">
+            <p className="text-lg text-brand-light leading-relaxed mb-8">
+              Pexvolt Engineering is your premier partner for all things electrical, serving as a cornerstone of reliability and technical excellence in the region. As a leading <strong>electrician Thika</strong>, we pride ourselves on delivering top-tier solutions that meet the diverse and evolving needs of our residential, commercial, and industrial clients. Our commitment to excellence is reflected in every project we undertake, from the smallest home repair to the most complex industrial setup, ensuring that your property is powered safely, efficiently, and sustainably for years to come. Whether you are looking for a comprehensive <strong>electrical installation Kenya</strong> or need specialized security systems, our team of certified professionals is here to provide expert guidance and flawless execution.
+            </p>
+            
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Our core expertise lies in high-quality Electrical Installations, which form the backbone of any modern infrastructure. We handle everything from complete domestic wiring for new homes to complex industrial power systems that require precision engineering and deep technical knowledge. In the rapidly growing landscape of <strong>electrical installation Kenya</strong>, Pexvolt stands out by adhering to the strictest safety protocols and using only the most reliable, high-grade materials. We understand that a robust electrical foundation is crucial for any building's longevity and safety, and we work tirelessly to ensure that your infrastructure is future-proof, energy-efficient, and fully compliant with all local and international regulations.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Security is another critical pillar of our service offering, as we believe that peace of mind is just as important as reliable power. We specialize in the supply, installation, and commissioning of <strong>automated gate Thika</strong> systems and high-voltage electric fencing. An <strong>automated gate Thika</strong> provides not only unparalleled convenience for your daily life but also serves as a significant boost to your property's overall security profile. By integrating advanced access control technologies with durable physical barriers, we help homeowners and business owners across the region protect their most valuable assets. Our fencing solutions are designed to be both a powerful deterrent and a reliable defense, ensuring that your perimeter remains secure against any unauthorized access at all times.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              In an era where technology and sustainability go hand in hand, Pexvolt offers cutting-edge CCTV, Networking, and Solar solutions tailored to the modern world. A professional <strong>CCTV installation Thika</strong> is essential for modern property management, providing real-time surveillance, remote monitoring, and a permanent record of events for your peace of mind. Furthermore, our <strong>solar power Thika</strong> projects are helping local residents and businesses transition to clean, renewable energy, significantly reducing their reliance on the national grid and lowering their long-term utility costs. Whether it is a simple backup system for your home or a large-scale industrial solar array, our <strong>solar power Thika</strong> experts will design a custom system that maximizes energy efficiency and provides a high return on investment.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Lighting and Alarm Systems are vital for both the aesthetics and the safety of any property. We design and install sophisticated interior and exterior lighting schemes that enhance the beauty and functionality of your space while ensuring optimal visibility and energy savings. Coupled with our advanced intruder alarm systems and motion-sensor security lighting, we provide a holistic and integrated approach to property protection. Finally, our Electrical Maintenance services ensure that your systems remain in peak condition throughout their lifespan. We offer both scheduled preventive maintenance and rapid corrective repairs for all electrical systems to minimize downtime and prevent costly failures. Should an unexpected issue arise, we are proud to be your reliable <strong>24/7 emergency electrician Kenya</strong>, ready to respond to any crisis at any hour, ensuring that your power is restored quickly, safely, and professionally whenever you need us most.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

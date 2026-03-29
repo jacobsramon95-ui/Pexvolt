@@ -74,6 +74,32 @@ export const Team = ({ isPage = false }: { isPage?: boolean }) => {
           </motion.div>
         ))}
       </div>
+
+      {isPage && (
+        <div className="mt-24 max-w-4xl mx-auto">
+          <div className="prose prose-invert prose-brand max-w-none">
+            <p className="text-lg text-brand-light leading-relaxed mb-8">
+              The success of Pexvolt Engineering is driven by the passion, expertise, and dedication of our founding team. As a premier <strong>electrician Thika</strong>, we believe that the human element is what truly sets us apart in a highly technical industry. Our leaders, Daniel Joshua and David Abuga, bring a wealth of diverse experience and a shared vision for elevating the standards of <strong>electrical installation Kenya</strong>. They have built a culture of excellence where every team member is empowered to deliver their best work, ensuring that our clients receive not only technical proficiency but also a level of service that is personal, professional, and deeply reliable.
+            </p>
+            
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Daniel Joshua, our Director and Co-Founder, is the strategic force behind Pexvolt's growth. With years of experience in the electrical contracting landscape of Kenya, Daniel has a deep understanding of what it takes to manage complex projects from inception to completion. His leadership ensures that Pexvolt remains at the forefront of the <strong>electrical installation Kenya</strong> market, consistently delivering projects that are on time, within budget, and above all, safe. Daniel's commitment to client satisfaction is the driving force behind our <strong>24/7 emergency electrician Kenya</strong> service, as he understands that being there for our clients in their time of need is the ultimate expression of our dedication.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              David Abuga, our Co-Founder and lead Electrical Engineer, provides the technical backbone of our operations. With a First Class Honours degree in Computer and Electronic Systems from Mount Kenya University, David brings a level of academic excellence and hands-on expertise that is rare in the industry. His specialized knowledge in industrial electrical engineering, PLC systems, and VFDs allows us to tackle the most challenging technical problems with confidence. David is also a passionate advocate for renewable energy, leading our <strong>solar power Thika</strong> initiatives with a focus on efficiency and long-term sustainability. His technical oversight ensures that every <strong>solar power Thika</strong> system we install is engineered to the highest possible standards.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Together, Daniel and David have created a team that excels in both traditional electrical work and modern security technologies. Whether it is a sophisticated <strong>CCTV installation Thika</strong> or a complex <strong>automated gate Thika</strong> system, our team approaches every task with the same level of rigor and attention to detail. We believe that a <strong>CCTV installation Thika</strong> should be more than just cameras; it should be a comprehensive security solution designed by experts. Similarly, our <strong>automated gate Thika</strong> systems are engineered for both durability and ease of use, reflecting our team's commitment to providing solutions that truly enhance the lives of our clients across the region.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              At Pexvolt Engineering, we are more than just a group of professionals; we are a family dedicated to serving our community. Our team's local roots in Thika mean that we are personally invested in the safety and prosperity of the area. This local focus, combined with our world-class technical expertise, makes us the ideal choice for anyone seeking a reliable <strong>electrician Thika</strong>. We are proud of the team we have built and the work we do every day to power Kenya's future. When you work with Pexvolt, you are working with a team that is experienced, dedicated, and always professional, ready to meet any electrical challenge with a smile and a solution.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

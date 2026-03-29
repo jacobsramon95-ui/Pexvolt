@@ -98,6 +98,32 @@ export const WhyUs = ({ isPage = false }: { isPage?: boolean }) => {
           </div>
         </div>
       </div>
+
+      {isPage && (
+        <div className="mt-24 max-w-4xl mx-auto">
+          <div className="prose prose-invert prose-brand max-w-none">
+            <p className="text-lg text-brand-light leading-relaxed mb-8">
+              Choosing the right <strong>electrician Thika</strong> is a decision that impacts the safety, efficiency, and long-term value of your property. At Pexvolt Engineering, we understand the trust you place in us when we enter your home or business. That is why we have built our reputation on a foundation of unwavering expertise, transparent communication, and a relentless commitment to quality. As a premier provider of <strong>electrical installation Kenya</strong>, we don't just complete tasks; we build lasting relationships with our clients by consistently exceeding their expectations and delivering results that stand the test of time.
+            </p>
+            
+            <p className="text-brand-gray leading-relaxed mb-8">
+              One of the primary reasons our clients choose us is our team of licensed and certified engineers. In the field of <strong>electrical installation Kenya</strong>, there is no substitute for formal training and hands-on experience. Our professionals are not only highly skilled but also stay updated with the latest industry standards and technologies. This ensures that every project, whether it involves a complex <strong>solar power Thika</strong> installation or a simple residential repair, is executed with the highest level of precision and safety. We take pride in our work, and it shows in the meticulous attention to detail we bring to every job site.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              We also recognize that electrical issues can be stressful and disruptive. That is why we offer a fast response and are proud to be your go-to <strong>24/7 emergency electrician Kenya</strong>. Whether it is a power outage in the middle of the night or a malfunctioning <strong>automated gate Thika</strong> that is preventing you from entering your property, our emergency team is always on standby. We prioritize urgent calls to ensure that your life and business can return to normal as quickly as possible. Our local presence in Thika allows us to reach our clients faster than many competitors, providing a level of service that is both rapid and reliable.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Quality is not just a buzzword at Pexvolt; it is our standard. From the components we use in a <strong>CCTV installation Thika</strong> to the wiring in a large industrial project, we never compromise on materials. We believe that using high-quality products is essential for the safety and longevity of any electrical system. This commitment to quality extends to our customer service as well. We provide clear, detailed quotes and keep you informed throughout the entire process. When you choose Pexvolt, you are choosing a partner who is as invested in the success of your project as you are, ensuring that your <strong>solar power Thika</strong> or security systems are built to last.
+            </p>
+
+            <p className="text-brand-gray leading-relaxed mb-8">
+              Finally, our deep roots in the Thika community give us a unique advantage. We are not just service providers; we are your neighbors. We understand the local infrastructure, the common electrical challenges faced by residents, and the specific security needs of businesses in the area. This local expertise allows us to provide tailored solutions that are more effective and efficient. Whether you need an <strong>automated gate Thika</strong> for your home or a comprehensive <strong>CCTV installation Thika</strong> for your business, you can count on Pexvolt Engineering to deliver professional, locally-focused service that you can trust.
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
