@@ -68,13 +68,13 @@ export const Hero = () => {
             {stats.map((stat, i) => (
               <div 
                 key={i} 
-                className={`py-6 md:py-8 border-white/10 text-center flex flex-col items-center justify-center
+                className={`py-6 md:py-8 border-white/10 text-center flex flex-col items-center justify-start
                   ${i % 2 === 0 ? 'border-r' : ''} 
                   ${i < 2 ? 'border-b md:border-b-0' : ''}
                   md:border-r md:last:border-r-0
                 `}
               >
-                <div className="font-display text-4xl font-black text-brand-red leading-none">{stat.n}</div>
+                <div className="font-display text-4xl font-black text-brand-red leading-none h-10 flex items-start justify-center">{stat.n}</div>
                 <div className="text-[10px] text-brand-gray tracking-widest uppercase mt-1">{t(stat.en, stat.sw)}</div>
               </div>
             ))}
