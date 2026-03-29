@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Youtube, Instagram, Mail, Image } from 'lucide-react';
-import logoImg from '/images/logo.jpg';
+import logoImg from '../assets/images/logo.jpg';
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -25,8 +25,9 @@ export const Footer = () => {
           </div>
         </div>
         
-        <div className="text-[13px] text-brand-gray">
-          {t('© 2024 Pexvolt Engineering. All rights reserved.', '© 2024 Pexvolt Engineering. Haki zote zimehifadhiwa.')}
+        <div className="text-[13px] text-brand-gray flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+          <span>{t('© 2026 Pexvolt Engineering. All rights reserved.', '© 2026 Pexvolt Engineering. Haki zote zimehifadhiwa.')}</span>
+          <a href="/privacy.html" className="hover:text-white transition-colors underline sm:no-underline sm:hover:underline">Privacy Policy</a>
         </div>
 
         <div className="flex gap-2.5">

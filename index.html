@@ -1,15 +1,115 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-57GGJ077PY"></script>
+    <!-- Google Analytics Consent Logic -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      
+      // Default to denied for consent mode (optional but good practice)
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
 
-      gtag('config', 'G-57GGJ077PY');
+      function loadGA() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-57GGJ077PY";
+        document.head.appendChild(script);
+
+        script.onload = () => {
+          gtag('js', new Date());
+          gtag('config', 'G-57GGJ077PY');
+          // Update consent to granted
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted'
+          });
+        };
+      }
+
+      // Check for existing consent on page load
+      window.addEventListener('DOMContentLoaded', () => {
+        const consent = localStorage.getItem('cookie-consent');
+        if (consent === 'accepted') {
+          loadGA();
+        } else if (consent !== 'declined') {
+          document.getElementById('cookie-banner').style.display = 'flex';
+        }
+      });
+
+      function handleConsent(choice) {
+        localStorage.setItem('cookie-consent', choice);
+        document.getElementById('cookie-banner').style.display = 'none';
+        if (choice === 'accepted') {
+          loadGA();
+        }
+      }
     </script>
+    <style>
+      #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #060D1A;
+        color: white;
+        padding: 20px 6%;
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 9999;
+        border-top: 2px solid #cc1a1a;
+        font-family: "Barlow", sans-serif;
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+      }
+      @media (min-width: 768px) {
+        #cookie-banner {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+      .cookie-text {
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 800px;
+      }
+      .cookie-text a {
+        color: #e8232a;
+        text-decoration: underline;
+      }
+      .cookie-btns {
+        display: flex;
+        gap: 10px;
+        shrink-0;
+      }
+      .cookie-btn {
+        padding: 10px 24px;
+        border: none;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn-accept {
+        background: #cc1a1a;
+        color: white;
+      }
+      .btn-accept:hover {
+        background: #e8232a;
+      }
+      .btn-decline {
+        background: transparent;
+        color: #b8c8e0;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+      .btn-decline:hover {
+        background: rgba(255,255,255,0.05);
+        color: white;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" />
@@ -29,6 +129,15 @@
   </head>
   <body>
     <div id="root"></div>
+    <div id="cookie-banner">
+      <div class="cookie-text">
+        We use cookies to analyse site traffic via Google Analytics. By continuing you accept our <a href="/privacy.html">Privacy Policy</a>.
+      </div>
+      <div class="cookie-btns">
+        <button class="cookie-btn btn-decline" onclick="handleConsent('declined')">Decline</button>
+        <button class="cookie-btn btn-accept" onclick="handleConsent('accepted')">Accept</button>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
