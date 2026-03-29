@@ -50,6 +50,8 @@ export const Navbar = () => {
             src={logoImg} 
             alt="Pexvolt Logo" 
             className="w-auto h-[60px] object-contain"
+            decoding="async"
+            fetchPriority="high"
           />
           <div className="flex flex-col leading-[1.1]">
             <span className="font-display font-black text-[21px] tracking-[3px] uppercase">

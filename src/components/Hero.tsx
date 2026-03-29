@@ -91,6 +91,8 @@ export const Hero = () => {
             src={industrialImg} 
             alt="Industrial Project" 
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute -inset-6 border border-brand-red/10 rounded-[40px] -z-10 animate-pulse"></div>
         </motion.div>

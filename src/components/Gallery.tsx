@@ -80,6 +80,8 @@ export const Gallery = ({ isPage = false }: { isPage?: boolean }) => {
               src={project.image} 
               alt={project.enTitle}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+              loading="lazy"
+              decoding="async"
             />
             
             <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
