@@ -3,8 +3,10 @@ import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Factory, Fence, ShieldCheck, Lightbulb, Wrench } from 'lucide-react';
 
-export const Services = () => {
+export const Services = ({ isPage = false }: { isPage?: boolean }) => {
   const { t } = useLanguage();
+
+  const Heading = isPage ? 'h1' : 'h2';
 
   const services = [
     {
@@ -64,9 +66,9 @@ export const Services = () => {
       <div className="text-[11px] font-bold tracking-[3px] uppercase text-brand-red mb-2.5">
         {t('What We Do', 'Tunachofanya')}
       </div>
-      <h2 className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
+      <Heading className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
         {t('Our Services', 'Huduma Zetu')}
-      </h2>
+      </Heading>
       <p className="text-sm text-brand-gray italic mb-16">
         {t('Complete electrical solutions — from installation to maintenance', 'Suluhisho kamili za umeme — kutoka usakinishaji hadi matengenezo')}
       </p>

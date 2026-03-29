@@ -4,8 +4,11 @@ import { useLanguage } from '../lib/LanguageContext';
 import { Phone, Smartphone, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-export const Contact = () => {
+export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
   const { t } = useLanguage();
+
+  const Heading = isPage ? 'h1' : 'h2';
+
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
@@ -46,9 +49,9 @@ export const Contact = () => {
       <div className="text-[11px] font-bold tracking-[3px] uppercase text-brand-red mb-2.5">
         {t('Get in Touch', 'Wasiliana Nasi')}
       </div>
-      <h2 className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
+      <Heading className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
         {t('Contact Us', 'Wasiliana Nasi')}
-      </h2>
+      </Heading>
       <p className="text-sm text-brand-gray italic mb-16">
         {t('Request a quote or ask us anything — we respond fast.', 'Omba bei au utuulize chochote — tunajibu haraka.')}
       </p>

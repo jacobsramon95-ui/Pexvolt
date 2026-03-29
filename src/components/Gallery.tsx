@@ -4,8 +4,10 @@ import { useLanguage } from '../lib/LanguageContext';
 import { ExternalLink, Camera } from 'lucide-react';
 import industrialImg from '/images/industrialproject.jpg';
 
-export const Gallery = () => {
+export const Gallery = ({ isPage = false }: { isPage?: boolean }) => {
   const { t } = useLanguage();
+
+  const Heading = isPage ? 'h1' : 'h2';
 
   const projects = [
     {
@@ -44,9 +46,9 @@ export const Gallery = () => {
           <div className="text-[11px] font-bold tracking-[3px] uppercase text-brand-red mb-2.5">
             {t('Our Portfolio', 'Kazi Zetu')}
           </div>
-          <h2 className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
+          <Heading className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
             {t('Featured Projects', 'Miradi Iliyochaguliwa')}
-          </h2>
+          </Heading>
           <p className="text-sm text-brand-gray italic">
             {t('A glimpse into our professional engineering work across Kenya.', 'Mtazamo wa kazi zetu za kihandisi nchini Kenya.')}
           </p>

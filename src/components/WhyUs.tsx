@@ -3,8 +3,10 @@ import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { ShieldCheck, Zap, Award, MapPin } from 'lucide-react';
 
-export const WhyUs = () => {
+export const WhyUs = ({ isPage = false }: { isPage?: boolean }) => {
   const { t } = useLanguage();
+
+  const Heading = isPage ? 'h1' : 'h2';
 
   const reasons = [
     {
@@ -44,9 +46,9 @@ export const WhyUs = () => {
           <div className="text-[11px] font-bold tracking-[3px] uppercase text-brand-red mb-2.5">
             {t('Why Choose Us', 'Kwa Nini Sisi')}
           </div>
-          <h2 className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
+          <Heading className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
             {t('Built on Trust & Expertise', 'Imejengwa kwa Uaminifu na Utaalamu')}
-          </h2>
+          </Heading>
           <p className="text-sm text-brand-gray italic mb-12">
             {t('Professional electrical engineering, delivered with pride.', 'Uhandisi wa umeme wa kitaalamu, unaotolewa kwa fahari.')}
           </p>

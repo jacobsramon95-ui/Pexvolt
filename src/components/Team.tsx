@@ -3,8 +3,10 @@ import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Phone } from 'lucide-react';
 
-export const Team = () => {
+export const Team = ({ isPage = false }: { isPage?: boolean }) => {
   const { t } = useLanguage();
+
+  const Heading = isPage ? 'h1' : 'h2';
 
   const members = [
     {
@@ -32,9 +34,9 @@ export const Team = () => {
       <div className="text-[11px] font-bold tracking-[3px] uppercase text-brand-red mb-2.5">
         {t('The People Behind Pexvolt', 'Watu Nyuma ya Pexvolt')}
       </div>
-      <h2 className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
+      <Heading className="font-display text-5xl md:text-6xl font-black uppercase leading-[0.93] mb-2">
         {t('Our Team', 'Timu Yetu')}
-      </h2>
+      </Heading>
       <p className="text-sm text-brand-gray italic mb-14">
         {t('Experienced. Dedicated. Professional.', 'Wenye uzoefu. Walijitolea. Wataalamu.')}
       </p>
