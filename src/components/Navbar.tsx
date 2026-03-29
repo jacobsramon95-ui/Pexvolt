@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../lib/LanguageContext';
 import { Menu, X } from 'lucide-react';
 import logoImg from '/images/logo.jpg';
@@ -7,6 +8,7 @@ export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -15,11 +17,22 @@ export const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { href: '#services', en: 'Services', sw: 'Huduma' },
-    { href: '#why', en: 'About Us', sw: 'Kuhusu Sisi' },
-    { href: '#team', en: 'Our Team', sw: 'Timu Yetu' },
-    { href: '#contact', en: 'Contact', sw: 'Wasiliana' },
+    { href: '/#services', en: 'Services', sw: 'Huduma' },
+    { href: '/#why', en: 'About Us', sw: 'Kuhusu Sisi' },
+    { href: '/#team', en: 'Our Team', sw: 'Timu Yetu' },
+    { href: '/#contact', en: 'Contact', sw: 'Wasiliana' },
   ];
+
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('/#') && location.pathname === '/') {
+      const id = href.substring(2);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <nav 
@@ -28,7 +41,11 @@ export const Navbar = () => {
       }`}
     >
       <div className="flex items-center justify-between h-[72px] gap-6">
-        <a href="#home" className="flex items-center gap-3 no-underline shrink-0">
+        <Link 
+          to="/" 
+          onClick={() => handleNavClick('/')}
+          className="flex items-center gap-3 no-underline shrink-0"
+        >
           <img 
             src={logoImg} 
             alt="Pexvolt Logo" 
@@ -41,18 +58,33 @@ export const Navbar = () => {
             </span>
             <span className="text-[9px] tracking-[3px] text-brand-gray uppercase font-semibold">Engineering</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex gap-8 list-none">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a 
-                href={link.href}
-                className="text-brand-light no-underline text-[12px] font-semibold tracking-[2px] uppercase transition-colors hover:text-brand-red border-b border-transparent hover:border-brand-red pb-0.5"
-              >
-                {t(link.en, link.sw)}
-              </a>
+              {link.href.startsWith('/#') ? (
+                <a 
+                  href={link.href}
+                  onClick={(e) => {
+                    if (location.pathname === '/') {
+                      e.preventDefault();
+                      handleNavClick(link.href);
+                    }
+                  }}
+                  className="text-brand-light no-underline text-[12px] font-semibold tracking-[2px] uppercase transition-colors hover:text-brand-red border-b border-transparent hover:border-brand-red pb-0.5"
+                >
+                  {t(link.en, link.sw)}
+                </a>
+              ) : (
+                <Link 
+                  to={link.href}
+                  className="text-brand-light no-underline text-[12px] font-semibold tracking-[2px] uppercase transition-colors hover:text-brand-red border-b border-transparent hover:border-brand-red pb-0.5"
+                >
+                  {t(link.en, link.sw)}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -73,7 +105,13 @@ export const Navbar = () => {
             </button>
           </div>
           <a 
-            href="#contact" 
+            href="/#contact" 
+            onClick={(e) => {
+              if (location.pathname === '/') {
+                e.preventDefault();
+                handleNavClick('/#contact');
+              }
+            }}
             className="hidden sm:block bg-brand-red text-white px-6 py-2.5 text-[12px] font-bold tracking-[1.5px] uppercase no-underline transition-colors hover:bg-brand-red-hover font-display whitespace-nowrap"
           >
             {t('Get a Quote', 'Omba Bei')}
@@ -93,19 +131,43 @@ export const Navbar = () => {
           <ul className="flex flex-col gap-4 list-none">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a 
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-brand-light text-sm font-semibold tracking-widest uppercase py-2"
-                >
-                  {t(link.en, link.sw)}
-                </a>
+                {link.href.startsWith('/#') ? (
+                  <a 
+                    href={link.href}
+                    onClick={(e) => {
+                      if (location.pathname === '/') {
+                        e.preventDefault();
+                        handleNavClick(link.href);
+                      } else {
+                        setIsMobileMenuOpen(false);
+                      }
+                    }}
+                    className="block text-brand-light text-sm font-semibold tracking-widest uppercase py-2"
+                  >
+                    {t(link.en, link.sw)}
+                  </a>
+                ) : (
+                  <Link 
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-brand-light text-sm font-semibold tracking-widest uppercase py-2"
+                  >
+                    {t(link.en, link.sw)}
+                  </Link>
+                )}
               </li>
             ))}
             <li>
               <a 
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
+                href="/#contact"
+                onClick={(e) => {
+                  if (location.pathname === '/') {
+                    e.preventDefault();
+                    handleNavClick('/#contact');
+                  } else {
+                    setIsMobileMenuOpen(false);
+                  }
+                }}
                 className="block bg-brand-red text-white text-center py-3 rounded font-bold uppercase tracking-widest mt-2"
               >
                 {t('Get a Quote', 'Omba Bei')}
