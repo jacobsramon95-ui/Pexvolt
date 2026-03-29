@@ -16,6 +16,24 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
     e.preventDefault();
     if (!formRef.current) return;
 
+    // 1. Honeypot check (fallback spam protection)
+    const honeypot = (formRef.current.elements.namedItem('website_url') as HTMLInputElement)?.value;
+    if (honeypot) {
+      console.warn('Spam detected via honeypot.');
+      setStatus('success'); // Fake success to confuse bots
+      formRef.current.reset();
+      return;
+    }
+
+    // 2. Turnstile check
+    const formData = new FormData(formRef.current);
+    const turnstileToken = formData.get('cf-turnstile-response');
+
+    if (!turnstileToken) {
+      alert(t('Please complete the security check.', 'Tafadhali kamilisha ukaguzi wa usalama.'));
+      return;
+    }
+
     setStatus('sending');
 
     emailjs.sendForm(
@@ -112,6 +130,15 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
             <label className="text-[10px] text-brand-gray tracking-widest uppercase font-semibold">{t('Your Message', 'Ujumbe Wako')}</label>
             <textarea required name="message" placeholder={t('Describe your project or question...', 'Elezea mradi wako au swali...')} className="bg-white/5 border border-white/10 text-white p-3.5 font-sans text-sm outline-none transition-colors focus:border-brand-red/60 focus:bg-white/[0.04] w-full min-h-[120px] resize-y"></textarea>
           </div>
+
+          {/* Honeypot field (hidden from users) */}
+          <div className="hidden" aria-hidden="true">
+            <input type="text" name="website_url" tabIndex={-1} autoComplete="off" />
+          </div>
+
+          {/* Cloudflare Turnstile Widget */}
+          <div className="cf-turnstile mt-2" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark"></div>
+
           <button 
             type="submit" 
             disabled={status !== 'idle'}
