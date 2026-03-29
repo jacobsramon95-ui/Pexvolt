@@ -81,7 +81,7 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
           ))}
         </div>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form ref={formRef} onSubmit={handleSubmit} method="POST" className="flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
               <label className="text-[10px] text-brand-gray tracking-widest uppercase font-semibold">{t('Your Name', 'Jina Lako')}</label>
