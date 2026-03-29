@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../lib/LanguageContext';
 import { Menu, X } from 'lucide-react';
-import logoImg from '/images/logo.jpg';
+import logoImg from '../assets/images/logo.jpg';
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();

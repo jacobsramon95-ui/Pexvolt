@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
-import industrialImg from '/images/industrialproject.jpg';
+import industrialImg from '../assets/images/industrialproject.jpg';
 
 export const Hero = () => {
   const { t } = useLanguage();
