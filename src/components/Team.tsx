@@ -43,7 +43,7 @@ export const Team = () => {
         {members.map((m, i) => (
           <motion.div 
             key={i}
-            className="bg-navy border border-white/10 p-10 md:p-12 relative overflow-hidden transition-all hover:border-brand-red/30 group"
+            className="bg-navy border border-white/10 p-10 md:p-12 relative overflow-hidden transition-all hover:border-brand-red/30 group flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

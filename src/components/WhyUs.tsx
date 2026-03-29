@@ -78,19 +78,19 @@ export const WhyUs = () => {
         </div>
 
         <div className="grid grid-cols-2 gap-0.5 bg-white/5">
-          <div className="bg-brand-red p-9 md:p-12">
+          <div className="bg-brand-red p-9 md:p-12 text-center flex flex-col items-center justify-center">
             <div className="font-display text-5xl md:text-6xl font-black leading-none mb-1.5">5+</div>
             <div className="text-[10px] md:text-[11px] tracking-[2px] uppercase opacity-75">{t('Years Experience', 'Miaka ya Uzoefu')}</div>
           </div>
-          <div className="bg-navy-light p-9 md:p-12">
+          <div className="bg-navy-light p-9 md:p-12 text-center flex flex-col items-center justify-center">
             <div className="font-display text-5xl md:text-6xl font-black leading-none mb-1.5">500+</div>
             <div className="text-[10px] md:text-[11px] tracking-[2px] uppercase opacity-75">{t('Projects Completed', 'Miradi Iliyokamilika')}</div>
           </div>
-          <div className="bg-navy-light p-9 md:p-12">
+          <div className="bg-navy-light p-9 md:p-12 text-center flex flex-col items-center justify-center">
             <div className="font-display text-5xl md:text-6xl font-black leading-none mb-1.5">100%</div>
             <div className="text-[10px] md:text-[11px] tracking-[2px] uppercase opacity-75">{t('Client Satisfaction', 'Kuridhika kwa Wateja')}</div>
           </div>
-          <div className="bg-brand-red p-9 md:p-12">
+          <div className="bg-brand-red p-9 md:p-12 text-center flex flex-col items-center justify-center">
             <div className="font-display text-5xl md:text-6xl font-black leading-none mb-1.5">24/7</div>
             <div className="text-[10px] md:text-[11px] tracking-[2px] uppercase opacity-75">{t('Always Available', 'Daima Tayari')}</div>
           </div>

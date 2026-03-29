@@ -75,7 +75,7 @@ export const Services = () => {
         {services.map((svc, i) => (
           <motion.div 
             key={i}
-            className="group bg-navy-light p-11 relative overflow-hidden transition-colors hover:bg-[#0c1e3a]"
+            className="group bg-navy-light p-11 relative overflow-hidden transition-colors hover:bg-[#0c1e3a] flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
