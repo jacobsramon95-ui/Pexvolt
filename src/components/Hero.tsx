@@ -45,8 +45,14 @@ export const Hero = () => {
               'Suluhisho za uhandisi wa umeme kwa nyumba, biashara na viwanda kote Thika na Nairobi.'
             )}
           </p>
-          <p className="text-sm text-brand-gray italic mb-11">
+          <p className="text-sm text-brand-gray italic mb-6">
             {t('Reliable. Professional. On time.', 'Kuaminika. Kitaalamu. Kwa wakati.')}
+          </p>
+          <p className="text-sm text-brand-light leading-relaxed mb-11 max-w-[550px]">
+            {t(
+              'Pexvolt Engineering is your trusted electrician in Thika, serving homes, businesses and industries across Thika and Nairobi. Whether you need a full electrical installation, a solar power system, CCTV surveillance, an automated gate, or 24/7 emergency electrical support — our licensed and certified engineers are ready to deliver. We combine technical expertise with local knowledge to provide fast, reliable and affordable electrical engineering solutions across Kenya.',
+              'Pexvolt Engineering ni fundi wako wa umeme unayemwamini huko Thika, akihudumia nyumba, biashara na viwanda kote Thika na Nairobi. Ikiwa unahitaji usakinishaji kamili wa umeme, mfumo wa nishati ya jua, ufuatiliaji wa CCTV, lango la kiotomatiki, au msaada wa dharura wa umeme wa 24/7 — wahandisi wetu wenye leseni na walioidhinishwa wako tayari kutoa. Tunachanganya utaalamu wa kiufundi na maarifa ya ndani ili kutoa suluhisho za uhandisi wa umeme za haraka, za kuaminika na za bei nafuu kote Kenya.'
+            )}
           </p>
 
           <div className="flex flex-wrap gap-4 mb-16">
