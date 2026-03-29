@@ -12,6 +12,8 @@
   --color-brand-red-hover: #e82020;
   --color-brand-gray: #6b7fa0;
   --color-brand-light: #b8c8e0;
+  
+  --breakpoint-xs: 400px;
 }
 
 @layer base {

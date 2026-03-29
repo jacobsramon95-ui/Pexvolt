@@ -44,21 +44,21 @@ export const Navbar = () => {
         <Link 
           to="/" 
           onClick={() => handleNavClick('/')}
-          className="flex items-center gap-3 no-underline shrink-0"
+          className="flex items-center gap-2 sm:gap-3 no-underline shrink-0"
         >
           <img 
             src={logoImg} 
             alt="Pexvolt Logo" 
-            className="w-auto h-[60px] object-contain"
+            className="w-auto h-[48px] sm:h-[60px] object-contain"
             decoding="async"
             fetchPriority="high"
           />
-          <div className="flex flex-col leading-[1.1]">
-            <span className="font-display font-black text-[21px] tracking-[3px] uppercase">
+          <div className="hidden xs:flex flex-col leading-[1.1]">
+            <span className="font-display font-black text-[18px] sm:text-[21px] tracking-[2px] sm:tracking-[3px] uppercase">
               <span className="text-brand-red">Pex</span>
               <span className="text-brand-red">volt</span>
             </span>
-            <span className="text-[9px] tracking-[3px] text-brand-gray uppercase font-semibold">Engineering</span>
+            <span className="text-[8px] sm:text-[9px] tracking-[2px] sm:tracking-[3px] text-brand-gray uppercase font-semibold">Engineering</span>
           </div>
         </Link>
 
@@ -92,7 +92,8 @@ export const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-3 shrink-0">
-          <div className="flex border border-white/15 overflow-hidden rounded-sm">
+          {/* Language Toggle - Desktop Only */}
+          <div className="hidden md:flex border border-white/15 overflow-hidden rounded-sm">
             <button 
               onClick={() => setLang('en')}
               className={`px-3 py-1.5 text-[11px] font-bold tracking-wider cursor-pointer transition-all uppercase ${lang === 'en' ? 'bg-brand-red text-white' : 'text-brand-gray hover:text-white'}`}
@@ -106,6 +107,8 @@ export const Navbar = () => {
               SW
             </button>
           </div>
+          
+          {/* CTA - Desktop Only */}
           <a 
             href="/#contact" 
             onClick={(e) => {
@@ -114,13 +117,16 @@ export const Navbar = () => {
                 handleNavClick('/#contact');
               }
             }}
-            className="hidden sm:block bg-brand-red text-white px-6 py-2.5 text-[12px] font-bold tracking-[1.5px] uppercase no-underline transition-colors hover:bg-brand-red-hover font-display whitespace-nowrap"
+            className="hidden md:block bg-brand-red text-white px-6 py-2.5 text-[12px] font-bold tracking-[1.5px] uppercase no-underline transition-colors hover:bg-brand-red-hover font-display whitespace-nowrap"
           >
             {t('Get a Quote', 'Omba Bei')}
           </a>
+
+          {/* Hamburger - Mobile Only */}
           <button 
-            className="md:hidden text-white"
+            className="md:hidden text-white p-2 -mr-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -129,8 +135,8 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-navy-light border-t border-white/10 py-6 px-[6%] absolute top-[72px] left-0 right-0 shadow-2xl">
-          <ul className="flex flex-col gap-4 list-none">
+        <div className="md:hidden bg-navy-light border-t border-white/10 py-8 px-[6%] absolute top-[72px] left-0 right-0 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-200">
+          <ul className="flex flex-col gap-6 list-none">
             {navLinks.map((link) => (
               <li key={link.href}>
                 {link.href.startsWith('/#') ? (
@@ -144,7 +150,7 @@ export const Navbar = () => {
                         setIsMobileMenuOpen(false);
                       }
                     }}
-                    className="block text-brand-light text-sm font-semibold tracking-widest uppercase py-2"
+                    className="block text-brand-light text-base font-bold tracking-widest uppercase py-2 border-b border-white/5"
                   >
                     {t(link.en, link.sw)}
                   </a>
@@ -152,13 +158,30 @@ export const Navbar = () => {
                   <Link 
                     to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-brand-light text-sm font-semibold tracking-widest uppercase py-2"
+                    className="block text-brand-light text-base font-bold tracking-widest uppercase py-2 border-b border-white/5"
                   >
                     {t(link.en, link.sw)}
                   </Link>
                 )}
               </li>
             ))}
+            
+            {/* Mobile Language Toggle */}
+            <li className="flex gap-4 mt-4">
+              <button 
+                onClick={() => setLang('en')}
+                className={`flex-1 py-3 text-xs font-bold tracking-widest uppercase border ${lang === 'en' ? 'bg-brand-red border-brand-red text-white' : 'border-white/20 text-brand-gray'}`}
+              >
+                English
+              </button>
+              <button 
+                onClick={() => setLang('sw')}
+                className={`flex-1 py-3 text-xs font-bold tracking-widest uppercase border ${lang === 'sw' ? 'bg-brand-red border-brand-red text-white' : 'border-white/20 text-brand-gray'}`}
+              >
+                Swahili
+              </button>
+            </li>
+
             <li>
               <a 
                 href="/#contact"
@@ -170,7 +193,7 @@ export const Navbar = () => {
                     setIsMobileMenuOpen(false);
                   }
                 }}
-                className="block bg-brand-red text-white text-center py-3 rounded font-bold uppercase tracking-widest mt-2"
+                className="block bg-brand-red text-white text-center py-4 font-display font-black uppercase tracking-[2px] mt-2"
               >
                 {t('Get a Quote', 'Omba Bei')}
               </a>
