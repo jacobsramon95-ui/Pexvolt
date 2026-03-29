@@ -56,7 +56,7 @@ export default function App() {
                 <>
                   <SEO 
                     title="Pexvolt Engineering – Electrician in Thika, Kenya"
-                    description="Pexvolt Engineering levert professionele elektrotechnische diensten in Thika en Kenya. Van installaties tot zonne-energie en CCTV – snel, betrouwbaar, 24/7."
+                    description="Pexvolt Engineering provides professional electrical engineering services in Thika and Kenya. From installations to solar energy and CCTV – fast, reliable, 24/7."
                     canonical="https://pexvolt.co.ke/"
                   />
                   <Home />
@@ -66,7 +66,7 @@ export default function App() {
                 <>
                   <SEO 
                     title="What We Do – Professional Electrical Services | Pexvolt Engineering"
-                    description="Ontdek de diensten van Pexvolt Engineering in Thika: van huisinstallaties en industriële bedrading tot zonne-energie en beveiligingssystemen."
+                    description="Discover Pexvolt Engineering's services in Thika: from domestic installations and industrial wiring to solar energy and security systems."
                     canonical="https://pexvolt.co.ke/what-we-do"
                   />
                   <Services isPage />
@@ -76,7 +76,7 @@ export default function App() {
                 <>
                   <SEO 
                     title="Why Choose Us – Reliable Electricians in Thika | Pexvolt Engineering"
-                    description="Waarom Pexvolt Engineering? Wij bieden 24/7 service, gecertificeerde technici en jarenlange ervaring in elektrotechniek in heel Kenia."
+                    description="Why Pexvolt Engineering? We offer 24/7 service, certified technicians, and years of experience in electrical engineering throughout Kenya."
                     canonical="https://pexvolt.co.ke/why-choose-us"
                   />
                   <WhyUs isPage />
@@ -86,7 +86,7 @@ export default function App() {
                 <>
                   <SEO 
                     title="Our Portfolio – Recent Electrical Projects | Pexvolt Engineering"
-                    description="Bekijk onze afgeronde projecten. Van zonnepaneel-installaties tot complexe industriële projecten in Thika en omgeving."
+                    description="View our completed projects. From solar panel installations to complex industrial projects in Thika and surrounding areas."
                     canonical="https://pexvolt.co.ke/our-portfolio"
                   />
                   <Gallery isPage />
@@ -96,7 +96,7 @@ export default function App() {
                 <>
                   <SEO 
                     title="Our Team – Expert Engineers at Pexvolt Engineering"
-                    description="Maak kennis met het team achter Pexvolt Engineering. Onze experts staan klaar voor al uw elektrotechnische uitdagingen in Thika."
+                    description="Meet the team behind Pexvolt Engineering. Our experts are ready for all your electrical challenges in Thika."
                     canonical="https://pexvolt.co.ke/the-people-behind-pexvolt"
                   />
                   <Team isPage />
@@ -106,7 +106,7 @@ export default function App() {
                 <>
                   <SEO 
                     title="Contact Us – Get a Quote Today | Pexvolt Engineering"
-                    description="Neem contact op met Pexvolt Engineering voor een vrijblijvende offerte of noodhulp bij stroomstoringen in Thika en Kenia."
+                    description="Contact Pexvolt Engineering for a free quote or emergency assistance with power outages in Thika and Kenya."
                     canonical="https://pexvolt.co.ke/get-in-touch"
                   />
                   <Contact isPage />
