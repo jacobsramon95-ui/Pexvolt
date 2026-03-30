@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Youtube, Instagram, Mail, Image } from 'lucide-react';
-import logoImg from '../assets/images/logo.webp';
+const logoImg = '/logo.webp';
 
 export const Footer = () => {
   const { t } = useLanguage();
