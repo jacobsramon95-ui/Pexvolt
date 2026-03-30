@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../lib/LanguageContext';
 import { Menu, X } from 'lucide-react';
-const logoImg = '/logo.svg';
+const logoImg = '/logo-full.png';
 
 export const Navbar = () => {
   const { lang, setLang, t } = useLanguage();
@@ -49,17 +49,10 @@ export const Navbar = () => {
           <img 
             src={logoImg} 
             alt="Pexvolt Logo" 
-            className="w-auto h-[48px] sm:h-[60px] object-contain"
+            className="h-[52px] sm:h-[64px] w-auto object-contain"
             decoding="async"
             fetchPriority="high"
           />
-          <div className="hidden xs:flex flex-col leading-[1.1]">
-            <span className="font-display font-black text-[18px] sm:text-[21px] tracking-[2px] sm:tracking-[3px] uppercase">
-              <span className="text-brand-red">Pex</span>
-              <span className="text-brand-red">volt</span>
-            </span>
-            <span className="text-[8px] sm:text-[9px] tracking-[2px] sm:tracking-[3px] text-brand-gray uppercase font-semibold">Engineering</span>
-          </div>
         </Link>
 
         {/* Desktop Nav */}
