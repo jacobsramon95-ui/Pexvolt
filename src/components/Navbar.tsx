@@ -52,8 +52,9 @@ export const Navbar = () => {
             className="w-auto h-[48px] sm:h-[60px] object-contain"
             decoding="async"
             fetchPriority="high"
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
-          <div className="hidden xs:flex flex-col leading-[1.1]">
+          <div className="flex flex-col leading-[1.1]">
             <span className="font-display font-black text-[18px] sm:text-[21px] tracking-[2px] sm:tracking-[3px] uppercase">
               <span className="text-brand-red">Pex</span>
               <span className="text-brand-red">volt</span>
