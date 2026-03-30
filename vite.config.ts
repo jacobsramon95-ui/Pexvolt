@@ -14,6 +14,7 @@ export default defineConfig(({mode}) => {
         jpg: { quality: 80 },
         jpeg: { quality: 80 },
         webp: { quality: 80 },
+        logStats: true,
       })
     ],
     define: {
