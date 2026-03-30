@@ -18,16 +18,23 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
             window.turnstile.remove(widgetIdRef.current);
           }
           
-          // Use testing sitekey for preview environments if production one fails or is missing
-          // 400020 error usually means domain mismatch or invalid sitekey
+          // Use the production sitekey, but fallback to the test key in preview environments
+          // to avoid the 400020 (Domain Mismatch) error.
           const isPreview = window.location.hostname.includes('run.app') || window.location.hostname.includes('localhost');
-          const sitekey = (process.env as any).VITE_TURNSTILE_SITEKEY || 
-                         (isPreview ? '1x00000000000000000000AA' : '0x4AAAAAACx3AQCzs16J2HqU');
+          const sitekey = isPreview ? '1x00000000000000000000AA' : '0x4AAAAAACx3AQCzs16J2HqU';
+
+          console.log(`[Turnstile] Initializing with ${isPreview ? 'test' : 'production'} sitekey: ${sitekey}`);
 
           widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
             sitekey,
             theme: 'dark',
             language: lang,
+            'error-callback': (error: string) => {
+              console.error('Cloudflare Turnstile Error:', error);
+            },
+            'expired-callback': () => {
+              if (widgetIdRef.current) window.turnstile?.reset(widgetIdRef.current);
+            }
           });
         } catch (e) {
           console.warn('Turnstile render error:', e);
