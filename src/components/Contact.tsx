@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef , useEffect} from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Phone, Smartphone, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
@@ -12,6 +12,11 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
+    useEffect(() => {
+          if (window.turnstile) {
+                  window.turnstile.render('.cf-turnstile');
+          }
+    }, []);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
