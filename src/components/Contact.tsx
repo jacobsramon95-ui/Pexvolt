@@ -18,12 +18,10 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
             window.turnstile.remove(widgetIdRef.current);
           }
           
-          // Use the production sitekey, but fallback to the test key in preview environments
-          // to avoid the 400020 (Domain Mismatch) error.
-          const isPreview = window.location.hostname.includes('run.app') || window.location.hostname.includes('localhost');
-          const sitekey = isPreview ? '1x00000000000000000000AA' : '0x4AAAAAACx3AQCzs16J2HqU';
+          // Use the production sitekey
+          const sitekey = '0x4AAAAAACx3AQCzsl6J2HqU';
 
-          console.log(`[Turnstile] Initializing with ${isPreview ? 'test' : 'production'} sitekey: ${sitekey}`);
+          console.log(`[Turnstile] Initializing with production sitekey: ${sitekey}`);
 
           widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
             sitekey,
