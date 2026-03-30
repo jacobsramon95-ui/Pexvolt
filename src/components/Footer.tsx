@@ -14,7 +14,6 @@ export const Footer = () => {
             src={logoImg} 
             alt="Pexvolt Logo" 
             className="w-auto h-[64px] object-contain"
-            onError={(e) => { e.currentTarget.style.display = 'none'; }}
           />
           <div>
             <div className="font-display font-black text-lg tracking-widest uppercase">

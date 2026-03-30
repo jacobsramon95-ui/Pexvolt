@@ -14,6 +14,7 @@
       function loadGA() {
         const script = document.createElement('script');
         script.async = true;
+        script.crossOrigin = "anonymous";
         script.src = "https://www.googletagmanager.com/gtag/js?id=G-57GGJ077PY";
         document.head.appendChild(script);
 
@@ -30,16 +31,18 @@
       // Check for existing consent on page load
       window.addEventListener('DOMContentLoaded', () => {
         const consent = localStorage.getItem('cookie-consent');
+        const banner = document.getElementById('cookie-banner');
         if (consent === 'accepted') {
           loadGA();
-        } else if (consent !== 'declined') {
-          document.getElementById('cookie-banner').style.display = 'flex';
+        } else if (consent !== 'declined' && banner) {
+          banner.style.display = 'flex';
         }
       });
 
       function handleConsent(choice) {
         localStorage.setItem('cookie-consent', choice);
-        document.getElementById('cookie-banner').style.display = 'none';
+        const banner = document.getElementById('cookie-banner');
+        if (banner) banner.style.display = 'none';
         if (choice === 'accepted') {
           loadGA();
         }
@@ -153,7 +156,7 @@
         "description": "Professional electrical engineering solutions, solar installations, and industrial electrical services in Thika, Kenya."
       }
     </script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" />

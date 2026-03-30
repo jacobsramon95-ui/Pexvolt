@@ -12,16 +12,20 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
   React.useEffect(() => {
     const renderWidget = () => {
       if (window.turnstile && turnstileRef.current) {
-        // Remove existing widget if it exists
-        if (widgetIdRef.current) {
-          window.turnstile.remove(widgetIdRef.current);
+        try {
+          // Remove existing widget if it exists
+          if (widgetIdRef.current) {
+            window.turnstile.remove(widgetIdRef.current);
+          }
+          
+          widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+            sitekey: '0x4AAAAAACx3AQCzs16J2HqU',
+            theme: 'dark',
+            language: lang,
+          });
+        } catch (e) {
+          console.warn('Turnstile render error:', e);
         }
-        
-        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
-          sitekey: '0x4AAAAAACx3AQCzs16J2HqU',
-          theme: 'dark',
-          language: lang,
-        });
       }
     };
 
@@ -40,8 +44,12 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
     }
 
     return () => {
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current);
+      if (widgetIdRef.current && window.turnstile?.remove) {
+        try {
+          window.turnstile.remove(widgetIdRef.current);
+        } catch (e) {
+          // Ignore errors on cleanup
+        }
       }
     };
   }, [lang]);

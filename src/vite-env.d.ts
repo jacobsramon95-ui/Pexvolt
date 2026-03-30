@@ -1,11 +1,13 @@
 /// <reference types="vite/client" />
 
 interface Window {
-  turnstile: {
+  turnstile?: {
     render: (element: HTMLElement, options: any) => string;
     reset: (id: string) => void;
     remove: (id: string) => void;
   };
+  gtag?: (...args: any[]) => void;
+  dataLayer?: any[];
 }
 
 declare module "*.svg" {
