@@ -18,8 +18,14 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
             window.turnstile.remove(widgetIdRef.current);
           }
           
+          // Use testing sitekey for preview environments if production one fails or is missing
+          // 400020 error usually means domain mismatch or invalid sitekey
+          const isPreview = window.location.hostname.includes('run.app') || window.location.hostname.includes('localhost');
+          const sitekey = (process.env as any).VITE_TURNSTILE_SITEKEY || 
+                         (isPreview ? '1x00000000000000000000AA' : '0x4AAAAAACx3AQCzs16J2HqU');
+
           widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
-            sitekey: '0x4AAAAAACx3AQCzs16J2HqU',
+            sitekey,
             theme: 'dark',
             language: lang,
           });
@@ -93,10 +99,16 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
         console.log('Email successfully sent!', result.text);
         setStatus('success');
         formRef.current?.reset();
+        if (widgetIdRef.current && window.turnstile) {
+          window.turnstile.reset(widgetIdRef.current);
+        }
         setTimeout(() => setStatus('idle'), 5000);
       }, (error) => {
         console.error('Failed to send email:', error.text);
         setStatus('error');
+        if (widgetIdRef.current && window.turnstile) {
+          window.turnstile.reset(widgetIdRef.current);
+        }
         setTimeout(() => setStatus('idle'), 5000);
       });
   };
@@ -186,7 +198,7 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
           {/* Cloudflare Turnstile Widget */}
           <div 
             ref={turnstileRef} 
-            className="mt-2" 
+            className="mt-2 min-h-[65px] w-full" 
           ></div>
 
           <button 
