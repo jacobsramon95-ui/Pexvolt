@@ -137,7 +137,7 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
           </div>
 
           {/* Cloudflare Turnstile Widget */}
-          <div className="cf-turnstile mt-2" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark"></div>
+          <div className="cf-turnstile mt-2" data-sitekey="0x4AAAAAACx3AQCzs16J2HqU" data-theme="dark"></div>
 
           <button 
             type="submit" 
