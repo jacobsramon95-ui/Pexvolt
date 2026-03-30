@@ -1,22 +1,56 @@
-import React, { useState, useRef , useEffect} from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'motion/react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Phone, Smartphone, Mail, MapPin, Clock, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  React.useEffect(() => {
+    const renderWidget = () => {
+      if (window.turnstile && turnstileRef.current) {
+        // Remove existing widget if it exists
+        if (widgetIdRef.current) {
+          window.turnstile.remove(widgetIdRef.current);
+        }
+        
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: '0x4AAAAAACx3AQCzs16J2HqU',
+          theme: 'dark',
+          language: lang,
+        });
+      }
+    };
+
+    // If turnstile is already loaded, render it
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      // Otherwise, wait for it to load
+      const interval = setInterval(() => {
+        if (window.turnstile) {
+          renderWidget();
+          clearInterval(interval);
+        }
+      }, 500);
+      return () => clearInterval(interval);
+    }
+
+    return () => {
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+      }
+    };
+  }, [lang]);
 
   const Heading = isPage ? 'h1' : 'h2';
 
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
-    useEffect(() => {
-          if (window.turnstile) {
-                  window.turnstile.render('.cf-turnstile');
-          }
-    }, []);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
@@ -142,7 +176,10 @@ export const Contact = ({ isPage = false }: { isPage?: boolean }) => {
           </div>
 
           {/* Cloudflare Turnstile Widget */}
-          <div className="cf-turnstile mt-2" data-sitekey="0x4AAAAAACx3AQCzsl6J2HqU" data-theme="dark"></div>
+          <div 
+            ref={turnstileRef} 
+            className="mt-2" 
+          ></div>
 
           <button 
             type="submit" 
