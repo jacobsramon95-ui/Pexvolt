@@ -53,9 +53,9 @@ export const Navbar = () => {
             decoding="async"
             fetchPriority="high"
           />
-          <div className="flex flex-col leading-[1.1]">
-            <span className="text-brand-red font-display font-black text-[16px] xs:text-[19px] sm:text-[22px] tracking-[1px] uppercase leading-none">PEXVOLT</span>
-            <span className="text-[#8fa8c8] font-display font-semibold text-[8px] xs:text-[9px] sm:text-[11px] tracking-[3px] sm:tracking-[4px] uppercase mt-[3px]">ENGINEERING</span>
+          <div className="flex flex-col leading-[1.1] w-fit">
+            <div className="flex justify-between w-full text-brand-red font-display font-black text-[16px] xs:text-[19px] sm:text-[22px] uppercase leading-none">{'PEXVOLT'.split('').map((c,i) => <span key={i}>{c}</span>)}</div>
+            <span className="text-[#8fa8c8] font-display font-semibold text-[8px] xs:text-[9px] sm:text-[11px] tracking-[3px] sm:tracking-[4px] uppercase mt-[3px] block">ENGINEERING</span>
           </div>
         </Link>
 
