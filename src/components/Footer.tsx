@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../lib/LanguageContext';
 import { Youtube, Instagram, Mail, Image } from 'lucide-react';
-const logoImg = '/logo.svg';
+const logoImg = '/logo-full.png';
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -13,16 +13,8 @@ export const Footer = () => {
           <img 
             src={logoImg} 
             alt="Pexvolt Logo" 
-            className="w-auto h-[64px] object-contain"
+            className="h-[80px] w-auto object-contain"
           />
-          <div>
-            <div className="font-display font-black text-lg tracking-widest uppercase">
-              <span className="text-brand-red">Pex</span>
-              <span className="text-brand-red">volt</span>
-              <span className="text-brand-red"> Engineering</span>
-            </div>
-            <div className="text-[11px] text-brand-gray tracking-wider">Thika, Kiambu County, Kenya</div>
-          </div>
         </div>
         
         <div className="text-[13px] text-brand-gray flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
