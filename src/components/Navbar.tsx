@@ -53,6 +53,10 @@ export const Navbar = () => {
             decoding="async"
             fetchPriority="high"
           />
+          <div className="hidden xs:flex flex-col leading-[1.1]">
+            <span className="text-brand-light font-display font-black text-[18px] sm:text-[22px] tracking-[2px] uppercase leading-none"><span className="text-brand-red">PEX</span>VOLT</span>
+            <span className="text-brand-gray font-display text-[9px] sm:text-[10px] tracking-[3px] uppercase mt-[2px]">Engineering</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
